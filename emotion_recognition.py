@@ -1,6 +1,6 @@
 
 
-subscription_key = "db64586323a140e38ffc204fe5adc42e"
+subscription_key = "06a63edf95824aeb91c168e77bdd9817"
 assert subscription_key
 
 face_api_url = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect"
