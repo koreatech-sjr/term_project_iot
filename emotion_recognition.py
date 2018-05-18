@@ -16,7 +16,7 @@ params = {
     'returnFaceAttributes': 'emotion',
 }
 
-image_data = {'url': './bgg.jpeg'}
+image_data = {'url': './image.jpeg'}
 
 response = requests.post(face_api_url, params=params, headers=headers, json={"url": 'https://ggia.berkeley.edu/assets/general/GGIA-HumanFace.jpg'})
 faces = response.json()
