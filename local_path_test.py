@@ -30,7 +30,7 @@ takePictureCommand = "raspistill -br 50 -t 1000 -o " + imagepath
 while True:
     os.system(takePictureCommand)  
 
-    img = open(expanduser('./image.jpg'), 'rb')
+    img = open(expanduser('./face.jpg'), 'rb')
     response = requests.post(url, data=img, headers=headers)
     pprint(response.json()[0])
     if response.status_code != 200:
