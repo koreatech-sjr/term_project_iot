@@ -32,7 +32,7 @@ while True:
 
     img = open(expanduser('./face.jpg'), 'rb')
     response = requests.post(url, data=img, headers=headers)
-    pprint(response.json()[0])
+    pprint(response.json())
     if response.status_code != 200:
         raise ValueError(
             'Request to Azure returned an error %s, the response is:\n%s'
