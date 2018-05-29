@@ -24,7 +24,7 @@ url = 'https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect?%s' % 
 
 
 imagepath = "./face.jpg"
-takePictureCommand = "raspistill -br 50 -t 1000 -o" + imagepath 
+takePictureCommand = "raspistill -br 50 -t 1000 -o " + imagepath 
 
 
 while True:
