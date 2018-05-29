@@ -48,3 +48,5 @@ for face in faces:
 
 #Display the image in the users default image browser.
 img.show()
+
+
