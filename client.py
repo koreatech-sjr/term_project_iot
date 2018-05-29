@@ -3,7 +3,7 @@ from bluetooth import *
 # Create the client socket
 client_socket = BluetoothSocket(RFCOMM)
 
-client_socket.connect(("b8:27:eb:6b:4e:9a", 3))
+client_socket.connect(("B8:27:EB:C1:E4:30", 3))
 
 client_socket.send("Hello World")
 
