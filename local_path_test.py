@@ -7,7 +7,7 @@ import sys
 from pprint import pprint
 from os.path import expanduser
 
-subscription_key = 'f7261a9c39f44a15aa74fcd99969ea00'
+subscription_key = '55f316dfd7d649efacd9dfd91acaa123'
 
 headers = {
     'Content-Type': 'application/octet-stream',
