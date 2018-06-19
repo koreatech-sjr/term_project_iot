@@ -8,7 +8,7 @@ import time
 from pprint import pprint
 from os.path import expanduser
 
-subscription_key = '55f316dfd7d649efacd9dfd91acaa123'
+subscription_key = '5f96f61c9b1242c995ea525521c5ae02'
 
 headers = {
     'Content-Type': 'application/octet-stream',
@@ -25,11 +25,11 @@ url = 'https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect?%s' % 
 
 
 imagepath = "./face.jpg"
-takePictureCommand = "raspistill -br 50 -t 3000 -o " + imagepath 
+takePictureCommand = "raspistill -br 50 -t 3000 -o " + imagepath
 
 try:
     while True:
-        os.system(takePictureCommand)  
+        os.system(takePictureCommand)
         print("take a picture!")
         img = open(expanduser('./face.jpg'), 'rb')
         response = requests.post(url, data=img, headers=headers)
@@ -43,4 +43,3 @@ try:
         os.remove(imagepath)
 except KeyboardInterrupt:
     print("Finished!")
-
