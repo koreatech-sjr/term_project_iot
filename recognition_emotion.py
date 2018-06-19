@@ -30,12 +30,13 @@ takePictureCommand = "raspistill -br 50 -t 3000 -o " + imagepath
 
 try:
     while True:
+        print("start")
         os.system(takePictureCommand)
         print("take a picture!")
         img = open(expanduser('./face.jpg'), 'rb')
         response = requests.post(url, data=img, headers=headers)
         faces = response.json()
-        print(response)
+        print(faces)
         for face in faces:
             fr = face["faceAttributes"]["emotion"]
             happiness = fr["happiness"]
