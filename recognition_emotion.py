@@ -35,7 +35,7 @@ try:
         img = open(expanduser('./face.jpg'), 'rb')
         response = requests.post(url, data=img, headers=headers)
         faces = response.json()
-
+        print(response)
         for face in faces:
             fr = face["faceAttributes"]["emotion"]
             happiness = fr["happiness"]
