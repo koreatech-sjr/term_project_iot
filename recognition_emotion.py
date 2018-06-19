@@ -4,6 +4,7 @@ import requests
 import os
 import sys
 import time
+import requests
 
 from pprint import pprint
 from os.path import expanduser
@@ -22,7 +23,7 @@ params = urllib.parse.urlencode({
 })
 
 url = 'https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect?%s' % params
-
+requestURL = 'http://192.168.0.6:3000'
 
 imagepath = "./face.jpg"
 takePictureCommand = "raspistill -br 50 -t 3000 -o " + imagepath
@@ -34,7 +35,7 @@ try:
         img = open(expanduser('./face.jpg'), 'rb')
         response = requests.post(url, data=img, headers=headers)
         faces = response.json()
-        
+
         for face in faces:
             fr = face["faceAttributes"]["emotion"]
             happiness = fr["happiness"]
@@ -45,9 +46,19 @@ try:
             neutral = fr["neutral"]
             sadness = fr["sadness"]
             contempt = fr["contempt"]
-            
-            
-        
+
+            body = {
+                "happiness" : happiness,
+                "disgust" : disgust,
+                "fear" : fear,
+                "anger" : anger,
+                "surprise" : surprise,
+                "neutral" : neutral,
+                "sadness" : sadness,
+                "contempt" : contempt
+            }
+
+            nodeRes = requests.post(requestURL, body)
         if response.status_code != 200:
             raise ValueError(
                 'Request to Azure returned an error %s, the response is:\n%s'
