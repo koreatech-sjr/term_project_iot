@@ -47,6 +47,8 @@ try:
             sadness = fr["sadness"]
             contempt = fr["contempt"]
 
+            if (anger >= 0.4 or disgust >= 0.2 or contempt >= 0.2 ):
+                os.system("aplay warning_angry.wav")
             body = {
                 "happiness" : happiness,
                 "disgust" : disgust,
