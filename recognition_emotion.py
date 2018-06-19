@@ -59,6 +59,7 @@ try:
             }
 
             nodeRes = requests.post(requestURL, body)
+            print(nodeRes)
         if response.status_code != 200:
             raise ValueError(
                 'Request to Azure returned an error %s, the response is:\n%s'
