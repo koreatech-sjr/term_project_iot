@@ -33,7 +33,21 @@ try:
         print("take a picture!")
         img = open(expanduser('./face.jpg'), 'rb')
         response = requests.post(url, data=img, headers=headers)
-        pprint(response.json())
+        faces = response.json()
+        
+        for face in faces:
+            fr = face["faceAttributes"]["emotion"]
+            happiness = fr["happiness"]
+            disgust = fr["disgust"]
+            fear = fr["fear"]
+            anger = fr["anger"]
+            surprise = fr["surprise"]
+            neutral = fr["neutral"]
+            sadness = fr["sadness"]
+            contempt = fr["contempt"]
+            
+            
+        
         if response.status_code != 200:
             raise ValueError(
                 'Request to Azure returned an error %s, the response is:\n%s'
