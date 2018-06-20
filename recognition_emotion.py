@@ -50,10 +50,16 @@ try:
             print("anger : ", anger)
             print("disgust : ", disgust)
             print("contempt : ", contempt)
+            if ( neutral > 0.7 ) :
+                neutral = neutral - 0.2
+                anger + 0.2
+
             if (anger >= 0.4 or disgust >= 0.2 or contempt >= 0.2 ):
                 os.system("aplay warning_angry.wav")
                 print("warning")
+            
             else :
+
                 print("not warning")
             body = {
                 "happiness" : happiness,
